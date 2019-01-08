@@ -4,12 +4,11 @@ import caffe
 import os
 import random
 from pandas.io.parsers import read_csv
-import matplotlib.pyplot as plt
 
-lm_name = '../../data/CelebA/files/train_full.txt'
-ln_name = '../../data/CelebA/files/val_full.txt'
-mean_file = '../../data/pretrained/resnet_50/ResNet_mean.binaryproto'
-prefix = ''
+lm_name = '../../data/CelebA/list/train_full.txt'
+ln_name = '../../data/CelebA/list/val_full.txt'
+mean_file = '../../data/pretrained/ResNet_mean.binaryproto'
+prefix = '../../data/'
 proto_data = open(mean_file, "rb").read()
 a = caffe.io.caffe_pb2.BlobProto.FromString(proto_data)
 mean = caffe.io.blobproto_to_array(a)[0]
@@ -27,8 +26,6 @@ def img_path_to_parse(img_path):
 
 def pre_process(color_img, is_mirror=False):
     resized_img = cv2.resize(color_img, (target_width, target_height))
-    #cv2.imshow('f', resized_img)
-    #cv2.waitKey(0)
     if is_mirror:
         flip_img = cv2.flip(resized_img, 1)
         return np.transpose(flip_img, (2, 0, 1)) - mean
@@ -36,29 +33,11 @@ def pre_process(color_img, is_mirror=False):
         return np.transpose(resized_img, (2, 0, 1)) - mean
 
 
-def showImage(img,points=None, bbox=None):
-    if points is not None:
-        for i in range(0,points.shape[0]/2):
-            cv2.circle(img,(int(round(points[i*2])),int(points[i*2+1])),1,(0,0,255),2)
-    if bbox is not None:
-        cv2.rectangle(img, (int(bbox[0]), int(bbox[2])), (int(bbox[1]), int(bbox[3])), (0,0,255), 2)
-    plt.figure()
-    plt.imshow(img)
-    plt.show()
-    print('here')
-
-
 class TrainLayer(caffe.Layer):
 
-    """
-    Compute the Euclidean Loss in the same manner as the C++ EuclideanLossLayer
-    to demonstrate the class interface for developing layers in Python.
-    """
     total_namelist = []
     attri_array =[]
-    # landmark_array =[]
     img_num = 0
-    # mean = []
     batch = 20
 
     def setup(self, bottom, top):
@@ -99,15 +78,10 @@ class TrainLayer(caffe.Layer):
 
 
 class ValLayer(caffe.Layer):
-    """
-    Compute the Euclidean Loss in the same manner as the C++ EuclideanLossLayer
-    to demonstrate the class interface for developing layers in Python.
-    """
+
     total_namelist = []
     attri_array = []
-    # landmark_array =[]
     img_num = 0
-    # mean = []
     batch = 20
 
     def setup(self, bottom, top):
