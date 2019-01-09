@@ -55,6 +55,7 @@ If you want to test your own image without synthesized abstraction image, you ca
 ```bash
 sh demo_single_path.sh
 ``` 
+The name of 40 attributes can be found at [Appendix](#attr_table)
 
 ### Dataset
 1. To train and evaluation the model on the CelebA benchmark, 
@@ -77,3 +78,53 @@ sh test_dual_path_celeba.sh
 cd models/dual_path_parse_resnet
 sh train.sh
 ```
+
+## Appendix
+
+40 binary attributes in CelebA dataset. Output 0: without this attribute, 1: with this attribute.
+
+<span id="attr_table">
+
+|     Id    | Name |             Name in Chinese                |
+| ------------ | --- | ------------------------------- |
+| 0 | 5\_o\_Clock\_Shadow   | 短胡子 |
+| 1 | Arched\_Eyebrows   | 弯眉毛|
+| 2 | Attractive   | 有吸引力 |
+| 3 | Bags\_Under\_Eyes   | 眼袋 |
+| 4 | Bald   | 秃顶 |
+| 5 | Bangs   | 刘海 |
+| 6 | Big\_Lips   |厚嘴唇|
+| 7 | Big\_Nose   | 大鼻子 |
+| 8 | Black\_Hair   | 黑色头发 |
+| 9 | Blond\_Hair   | 金色头发 |
+| 10 | Blurry    | 模糊 |
+| 11 | Brown\_Hair    | 棕色头发 |
+| 12 | Bushy\_Eyebrows    | 浓眉毛 |
+| 13 | Chubby    | 胖的 |
+| 14 | Double\_Chin    | 双下巴 |
+| 15 | Eyeglasses    | 眼镜 |
+| 16 | Goatee    | 山羊胡子 |
+| 17 | Gray\_Hair    | 灰白头发 |
+| 18 | Heavy\_Makeup    |浓妆  |
+| 19 | High\_Cheekbones    | 高颧骨 |
+| 20 | Male    | 男性 |
+| 21 | Mouth_Slightly\_Open    | 嘴巴微张 |
+| 22 | Mustache    | 胡子，髭 |
+| 23 | Narrow\_Eyes    | 小眼睛 |
+| 24 | No\_Beard    | 没有胡子 |
+| 25 | Oval\_Face    |  鸭蛋脸 |
+| 26 | Pale\_Skin    | 皮肤苍白 |
+| 27 | Pointy\_Nose    |  尖鼻子|
+| 28 | Receding\_Hairline    | 发际线后移 |
+| 29 | Rosy\_Cheeks    | 红润双颊 |
+| 30 | Sideburns    |  连鬓胡子|
+| 31 | Smiling    | 微笑 |
+| 32 | Straight\_Hair    | 直发 |
+| 33 | Wavy\_Hair    | 卷发 |
+| 34 | Wearing\_Earrings    | 戴耳环 |
+| 35 | Wearing\_Hat    | 戴帽子 |
+| 36 | Wearing\_Lipstick    | 涂唇膏 |
+| 37 | Wearing\_Necklace    |  戴项链 |
+| 38 | Wearing\_Necktie    | 戴领带 |
+| 39 | Young     |  年轻 |
+</span>
