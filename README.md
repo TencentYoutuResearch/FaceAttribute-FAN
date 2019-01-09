@@ -41,7 +41,7 @@ cd FaceAttribute-FAN
 
 ### Model
 
-Please download the trained models from [Google drive](https://drive.google.com/open?id=1DFd2pvLUEYo2CawaYH_CWVqsAiFtihcz), and put it into outputs folder.
+Please download the trained models from [Google drive](https://drive.google.com/open?id=1DFd2pvLUEYo2CawaYH_CWVqsAiFtihcz) or [Baidu drive](https://pan.baidu.com/s/1JJ7qqPE2InIqCXKbfjxfSw), and put it into outputs folder.
 
 
 ### Demo
@@ -60,7 +60,7 @@ The name of 40 attributes can be found at [Appendix](#attr_table)
 ### Dataset
 1. To train and evaluation the model on the CelebA benchmark, 
 please download the CelebA dataset from [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). 
-2. Please download pretrained model and synthesized abstraction images of CelebA dataset from [Google drive](https://drive.google.com/open?id=1DFd2pvLUEYo2CawaYH_CWVqsAiFtihcz).
+2. Please download pretrained model and synthesized abstraction images of CelebA dataset from [Google drive](https://drive.google.com/open?id=1DFd2pvLUEYo2CawaYH_CWVqsAiFtihcz) or [Baidu drive](https://pan.baidu.com/s/1JJ7qqPE2InIqCXKbfjxfSw).
 3. Put the original CelebA and synthesized abstraction image under the data/CelebA folder, for example:
 	
 	```	├── CelebA	│   ├── img_align_celeba	│   ├── img_celeba_pix2pix
