@@ -1,0 +1,9 @@
+python evaluation/prediction_dual_path.py --gpu="0" \
+--test-file="./data/demo/list/demo_with_abstraction.list" \
+--pred-file="./result/demo_dual_result.list" \
+--attr-num="40" \
+--prototxt-path="./outputs/deploy_dual.prototxt" \
+--caffemodel-path="./outputs/dual_path_parse_resnet_celeba.caffemodel" \
+--feature-layer="pred" \
+--root-folder="./data" \
+--mean-file="./data/pretrained/ResNet_mean.binaryproto"
